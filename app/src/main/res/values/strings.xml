@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Login App</string>
+
+    <string name="sign_in_text_button">SIGN IN</string>
+    <string name="sign_up_text_button">SIGN UP</string>
+
+    <string name="text_button_submit">Submit</string>
+    <string name="sign_in_success">You have successfully entered</string>
+    <string name="register_success">You have successfully registered</string>
+    <string name="text_button_register">Register</string>
+
+    <string name="error_wrong_second_pass">Passwords must equals</string>
+    <string name="error_sign_in">Wrong Login or password</string>
+    <string name="error_register">Login not unique</string>
+
+</resources>
