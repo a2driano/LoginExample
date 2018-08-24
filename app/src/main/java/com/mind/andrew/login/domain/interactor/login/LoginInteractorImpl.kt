@@ -4,17 +4,17 @@ import com.mind.andrew.login.data.DataManager
 import com.mind.andrew.login.data.DataManagerImpl
 import com.mind.andrew.login.domain.model.LoginViewModel
 
-class LoginInteractorImpl : LoginInteractor {
+object LoginInteractorImpl : LoginInteractor {
 
-    private object Holder {
-        val INSTANCE = LoginInteractorImpl()
-    }
+//    private object Holder {
+//        val INSTANCE = LoginInteractorImpl()
+//    }
+//
+//    companion object {
+//        val instance: LoginInteractor by lazy { Holder.INSTANCE }
+//    }
 
-    companion object {
-        val instance: LoginInteractor by lazy { Holder.INSTANCE }
-    }
-
-    private val dataManager: DataManager = DataManagerImpl.instance
+    private val dataManager: DataManager = DataManagerImpl
 
     override fun signIn(model: LoginViewModel): Boolean {
         val modelDevice: LoginViewModel = dataManager.getLoginData()

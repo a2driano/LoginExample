@@ -7,10 +7,10 @@ import com.mind.andrew.login.domain.interactor.login.LoginInteractorImpl
 import com.mind.andrew.login.domain.model.LoginViewModel
 
 class LoginPresenter(
-        val view: LoginContract.LoginView, val context: Context?) :
+        val view: LoginContract.LoginView, private val context: Context?) :
         LoginContract.LoginPresenter {
 
-    private val loginInteractor: LoginInteractor = LoginInteractorImpl.instance
+    private val loginInteractor: LoginInteractor = LoginInteractorImpl
 
     override fun signIn(model: LoginViewModel) {
         val response = loginInteractor.signIn(model)
