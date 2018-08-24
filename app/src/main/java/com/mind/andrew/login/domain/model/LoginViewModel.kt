@@ -2,10 +2,11 @@ package com.mind.andrew.login.domain.model
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
-import android.util.Log
 import com.mind.andrew.login.BR
+import com.mind.andrew.login.utils.adapter.StupidErrorListener
 
 data class LoginViewModel(
+        val _errorListener: StupidErrorListener?,
         var _login: String,
         var _password: String,
         var _repeatPassword: String?,
@@ -30,9 +31,6 @@ data class LoginViewModel(
             _password = value
             notifyPropertyChanged(BR.password)
             validPass = validatePass()
-//            Log.e("tag", "validatePass: ${validatePass()}")
-//            Log.e("tag", " validPass   : $validPass")
-//            Log.e("tag", "_validPass   : $_validPass")
             validButtonSign = validateButtonSign()
             validButtonRegister = validateButtonRegister()
         }
@@ -43,9 +41,6 @@ data class LoginViewModel(
             _repeatPassword = value
             notifyPropertyChanged(BR.repeatPassword)
             validPass = validatePass()
-//            Log.e("tag", "validatePass: ${validatePass()}")
-//            Log.e("tag", "validPass   : $validPass")
-//            Log.e("tag", "_validPass   : $_validPass")
             validButtonRegister = validateButtonRegister()
         }
 
@@ -54,6 +49,7 @@ data class LoginViewModel(
         get() = _validPass
         set(value) {
             _validPass = value
+            _errorListener?.changeErrorVisibility(_validPass)
             notifyPropertyChanged(BR.validPass)
         }
 
@@ -74,7 +70,7 @@ data class LoginViewModel(
         }
 
     private fun validatePass(): Boolean {
-        return _password == _repeatPassword
+        return _password == _repeatPassword || _repeatPassword.isNullOrEmpty()
     }
 
     private fun validateButtonSign(): Boolean {

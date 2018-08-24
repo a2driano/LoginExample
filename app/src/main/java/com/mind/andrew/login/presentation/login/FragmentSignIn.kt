@@ -12,12 +12,11 @@ import android.widget.Toast
 import com.mind.andrew.login.R
 import com.mind.andrew.login.databinding.FragmentSignBinding
 import com.mind.andrew.login.domain.model.LoginViewModel
+import com.mind.andrew.login.utils.adapter.StupidErrorListener
 import kotlinx.android.synthetic.main.fragment_sign.*
 
 
-class FragmentSignIn : Fragment(), LoginContract.LoginView {
-
-
+class FragmentSignIn : Fragment(), LoginContract.LoginView, StupidErrorListener {
     private lateinit var presenter: LoginContract.LoginPresenter
     private lateinit var binding: FragmentSignBinding
 
@@ -31,7 +30,7 @@ class FragmentSignIn : Fragment(), LoginContract.LoginView {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign, container, false)
         binding.listener = presenter
-        binding.model = LoginViewModel("", "", "")
+        binding.model = LoginViewModel(this, "", "", "")
         binding.buttonSubmit.visibility = View.VISIBLE
         return binding.root
     }
@@ -52,6 +51,10 @@ class FragmentSignIn : Fragment(), LoginContract.LoginView {
     override fun errorLogin(msg: String) {
         binding.textInputLayout.isErrorEnabled = true
         binding.textInputLayout.error = msg
+    }
+
+    override fun changeErrorVisibility(visible: Boolean) {
+        binding.passSecondTextLayout.isErrorEnabled = !visible
     }
 
     companion object {

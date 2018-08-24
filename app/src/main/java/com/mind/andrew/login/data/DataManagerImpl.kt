@@ -5,7 +5,6 @@ import com.mind.andrew.login.domain.model.LoginViewModel
 
 class DataManagerImpl private constructor() : DataManager {
 
-
     private val login: String = App.login
     private val pass: String = App.password
 
@@ -18,6 +17,6 @@ class DataManagerImpl private constructor() : DataManager {
     }
 
     override fun getLoginData(): LoginViewModel {
-        return LoginViewModel(login, pass, "")
+        return LoginViewModel(null, login, pass, "")
     }
 }
