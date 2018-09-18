@@ -4,6 +4,7 @@ package com.mind.andrew.login.presentation.login
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,13 +16,15 @@ import com.mind.andrew.login.databinding.FragmentSignBinding
 import com.mind.andrew.login.domain.model.LoginViewModel
 import com.mind.andrew.login.utils.adapter.StupidErrorListener
 
-class FragmentSignUp : Fragment(), LoginContract.LoginView, StupidErrorListener {
-    private lateinit var presenter: LoginContract.LoginPresenter
+class FragmentSignUp : Fragment(), LoginContract.View, StupidErrorListener {
+
+
+    private lateinit var presenter: LoginContract.Presenter
     private lateinit var binding: FragmentSignBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        presenter = LoginPresenter(this, context)
+        presenter = LoginPresenter(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +50,16 @@ class FragmentSignUp : Fragment(), LoginContract.LoginView, StupidErrorListener 
     override fun changeErrorVisibility(visible: Boolean) {
         Log.e("tag", "changeErrorVisibility : $visible")
         binding.passSecondTextLayout.isErrorEnabled = !visible
-        binding.passSecondTextLayout.error = getString(R.string.error_wrong_second_pass)
+        if (visible)
+            binding.passSecondTextLayout.error = null
+        else
+            binding.passSecondTextLayout.error = getString(R.string.error_wrong_second_pass)
+//        binding.passSecondTextLayout.error = !visible ? null : getString(R.string.error_wrong_second_pass)
+//        binding.passSecondTextLayout.error = getString(R.string.error_wrong_second_pass)
+    }
+
+    override fun parentActivity(): FragmentActivity? {
+        return activity
     }
 
     companion object {

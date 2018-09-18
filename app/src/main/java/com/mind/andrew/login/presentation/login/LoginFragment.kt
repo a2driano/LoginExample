@@ -1,20 +1,15 @@
 package com.mind.andrew.login.presentation.login
 
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.mind.andrew.login.R
 //import com.mind.andrew.loginexample.databinding.FragmentLoginPagerBinding
 import com.mind.andrew.login.utils.pager.LoginPagerAdapter
 import kotlinx.android.synthetic.main.fragment_login_pager.*
-import kotlinx.android.synthetic.main.fragment_login_pager.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -24,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_login_pager.view.*
  */
 class LoginFragment : Fragment() {
 
-    private lateinit var presenter: LoginContract.LoginPresenter
+    private lateinit var presenter: LoginContract.Presenter
 //    private lateinit var binding: FragmentLoginPagerBinding
 
     companion object {
@@ -46,7 +41,7 @@ class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        presenter = LoginPresenter(this)
+//        presenter = Presenter(this)
     }
 
 

@@ -8,7 +8,7 @@
 
         <variable
             name="listener"
-            type="com.mind.andrew.login.presentation.login.LoginContract.LoginPresenter" />
+            type="com.mind.andrew.login.presentation.login.LoginContract.Presenter" />
 
         <variable
             name="model"
@@ -70,6 +70,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            app:error="@{@string/error_wrong_second_pass}"
+            app:errorEnabled="@{!model.validPass}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

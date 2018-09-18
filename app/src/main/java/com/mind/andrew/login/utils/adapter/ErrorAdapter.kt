@@ -5,5 +5,8 @@ import android.support.design.widget.TextInputLayout
 
 @BindingAdapter("app:error")
 fun setError(view: TextInputLayout, error: String) {
-    view.error = error
+    if (view.isErrorEnabled)
+        view.error = error
+    else
+        view.error = null
 }

@@ -2,6 +2,7 @@ package com.mind.andrew.login.domain.model
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
+import android.util.Log
 import com.mind.andrew.login.BR
 import com.mind.andrew.login.utils.adapter.StupidErrorListener
 
@@ -49,8 +50,10 @@ data class LoginViewModel(
         get() = _validPass
         set(value) {
             _validPass = value
-            _errorListener?.changeErrorVisibility(_validPass)
             notifyPropertyChanged(BR.validPass)
+            _errorListener?.changeErrorVisibility(_validPass)
+            Log.e("va", "validPass: $validPass")
+
         }
 
     var validButtonSign: Boolean
