@@ -7,5 +7,5 @@ interface DataInteractor {
 
     fun signIn(model: LoginViewModel): Boolean
     fun register(model: LoginViewModel): Boolean
-    fun getData():List<UserModel>
+    fun getData(): List<UserModel>
 }

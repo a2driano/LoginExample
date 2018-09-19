@@ -15,7 +15,10 @@ object DataManagerImpl : DataManager {
     override fun getLoginData(model: UserModel): Boolean {
         var user: UserModel? = null
         realm.executeTransaction { realm ->
-            user = realm.where(UserModel::class.java).contains("login", model.login).contains("password", model.password).findFirst() as UserModel?
+            user = realm.where(UserModel::class.java)
+                    .contains("login", model.login)
+                    .contains("password", model.password)
+                    .findFirst()
         }
         return user != null
     }

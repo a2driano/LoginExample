@@ -29,10 +29,7 @@ class ListAdapter(var list: List<UserModel>) : RecyclerView.Adapter<ListAdapter.
         fun bindItem(holder: UserModel) {
             itemView.login_text.text = holder.login
             itemView.pass_text.text = holder.password
-
-            Log.e("tag", "login: ${holder.login}")
-            Log.e("tag", "password: ${holder.password}")
-//            itemView.circle_text.text = holder.login?.toCharArray()[0].toString()?:"A"
+            itemView.circle_text.text = holder.login!!.toCharArray()[0].toString()
         }
     }
 }
