@@ -13,7 +13,6 @@ import android.widget.Toast
 
 import com.mind.andrew.login.R
 import com.mind.andrew.login.databinding.FragmentSignBinding
-import com.mind.andrew.login.domain.model.LoginViewModel
 import com.mind.andrew.login.utils.adapter.StupidErrorListener
 
 class FragmentSignUp : Fragment(), LoginContract.View, StupidErrorListener {

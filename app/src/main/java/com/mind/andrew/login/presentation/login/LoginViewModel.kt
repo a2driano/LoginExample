@@ -1,4 +1,4 @@
-package com.mind.andrew.login.domain.model
+package com.mind.andrew.login.presentation.login
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable

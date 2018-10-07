@@ -12,7 +12,7 @@
 
         <variable
             name="model"
-            type="com.mind.andrew.login.domain.model.LoginViewModel" />
+            type="com.mind.andrew.login.presentation.login.LoginViewModel" />
 
     </data>
 

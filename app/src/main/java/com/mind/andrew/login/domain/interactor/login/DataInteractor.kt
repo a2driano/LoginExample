@@ -1,6 +1,6 @@
 package com.mind.andrew.login.domain.interactor.login
 
-import com.mind.andrew.login.domain.model.LoginViewModel
+import com.mind.andrew.login.presentation.login.LoginViewModel
 import com.mind.andrew.login.domain.model.UserModel
 
 interface DataInteractor {

@@ -1,9 +1,8 @@
 package com.mind.andrew.login.domain.interactor.login
 
-import android.util.Log
 import com.mind.andrew.login.data.DataManager
 import com.mind.andrew.login.data.DataManagerImpl
-import com.mind.andrew.login.domain.model.LoginViewModel
+import com.mind.andrew.login.presentation.login.LoginViewModel
 import com.mind.andrew.login.domain.model.UserModel
 
 object DataInteractorImpl : DataInteractor {

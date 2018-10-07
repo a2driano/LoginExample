@@ -3,7 +3,6 @@ package com.mind.andrew.login.presentation.login
 import com.mind.andrew.login.R
 import com.mind.andrew.login.domain.interactor.login.DataInteractor
 import com.mind.andrew.login.domain.interactor.login.DataInteractorImpl
-import com.mind.andrew.login.domain.model.LoginViewModel
 import com.mind.andrew.login.presentation.list.ListFragment
 import com.mind.andrew.login.utils.fragments.addFragmentToActivity
 
